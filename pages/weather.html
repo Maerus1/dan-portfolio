@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>Weather Machine 2.0</title>
+    <meta charset="utf-8">
+    <!-- IMPORTED FONTS -->
+    <link href="https://fonts.googleapis.com/css?family=Abril+Fatface" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Ubuntu" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Open+Sans" rel="stylesheet">
+    <!-- IMPORTED CDN -->
+    <script
+  src="https://code.jquery.com/jquery-3.1.1.js"
+  integrity="sha256-16cdPddA6VdVInumRGo6IbivbERE8p7CQR3HzTBuELA="
+  crossorigin="anonymous"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <link rel="stylesheet" type="text/css" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- LOCAL CSS -->
+  <link rel="stylesheet" type="text/css" href="../styles/weather.css">
+  </head>
+  <body>
+      <div class="container-fluid text-center well">
+        <div class="row">
+          <nav class="navbar navbar-default">
+            <div class="navbar-header navigation">
+              <a class="navbar-brand" href="#">Dan's Portfolio</a>
+              <ul class="nav navbar-nav">
+                <li><a href="../index.html">Home</a></li>
+                <li class="dropdown">
+                  <a class="dropdown-toggle" data-toggle="dropdown" href="#">Projects
+                    <span class="caret"></span></a>
+                    <ul class="dropdown-menu">
+                      <li><a href="quotes.html">Quotes</a></li>
+                      <li><a href="weather.html">Weather</a></li>
+                      <li><a href="twitch.html">Twitch</a></li>
+                      <li><a href="wiki.html">Wikipedia</a></li>
+                    </ul>
+                </li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="contact.html">Contact Me</a></li>
+              </ul>
+            </div>
+          </nav>
+        </div>
+        <div class="row">
+          <h1>Weather Machine 2.0</h1>
+        </div>
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <p class="city"></p>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+          </div>
+        </div>
+        <div class="row ">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <p class="temp"></p>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <p class="humidity"></p>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+          </div>
+        </div>
+        <div class="row">
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+          </div>
+          <div class="col-lg-8 col-md-8 col-sm-8 col-xs-8">
+            <p class="condition"></p>
+          </div>
+          <div class="col-lg-2 col-md-2 col-sm-2 col-xs-2">
+          </div>
+        </div>
+        <div class="row">
+          <img id="image" src="../images/mist.gif" alt="weather conditions graphic"> <!-- ADD IN CONDITION IMAGE FUNCTIONALITY !!! -->
+        </div><br>
+        <div class="row">
+          <button class="btn button switch">Ferinheight</button>
+        </div>
+      </div>
+      <div class="container-fluid text-center well">
+        <p>&copy; Dorsey Solutions Inc.</p>
+      </div>
+      <!-- LOCAL JS -->
+      <script type="text/javascript" src="../scripts/weather.js"></script>
+  </body>
+</html>
