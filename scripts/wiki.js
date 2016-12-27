@@ -1,20 +1,15 @@
 $(function(){
 
+var content = $(".content");
+
   function recall(){
-    $.ajax({
-      cache: false,
-      datatype: 'json',
-      type: 'GET',
-      url: "https://en.wikipedia.org/w/api.php?action=query&format=json&errorformat=bc&titles=Main_Page",
-      headers: { 'Api-User-Agent': 'Test/1.1' },
-      success: function(a){
-        console.log(a);
-      },
-      error: function(){
-        console.log("Error");
-      }
+    $.getJSON("https://en.wikipedia.org/w/api.php?action=query&format=json&prop=pageimages%7Cpageterms&titles=Switchfoot&formatversion=2&piprop=original&callback=?", function(obj){
+      console.log(obj);
+      content.append(
+        "<img class=\"img-responsive center-block\" src=\"" + obj.query.pages[0].thumbnail.original + "\" width=\"200\">"
+      );
     });
-  }
+    }
 
   recall();
 });
