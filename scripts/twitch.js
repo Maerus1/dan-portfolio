@@ -1,18 +1,12 @@
 $(function(){
 
-  function recall(){
-    $.ajax({
-      cache: false,
-      type: 'GET',
-      url: "https://wind-bow.gomix.me/twitch-api/users/",
-      success: function(a){
-        console.log(a);
-      },
-      error: function(){
-        console.log("Error");
-      }
-    });
+  //create list of users array for future population of the webpage
+  var users = ["ESL_SC2", "OgamingSC2", "cretetion", "freecodecamp", "storbeck", "habathcx", "RobotCaleb", "noobs2ninjas"];
+  for(var i in users){
+    (function(i){
+      $.getJSON("https://wind-bow.gomix.me/twitch-api/users/" + users[i], function(obj){
+        console.log(obj);
+      });
+    })(i);
   }
-
-  recall();
 });
