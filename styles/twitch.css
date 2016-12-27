@@ -43,13 +43,16 @@ p, li {
 
 .navbar-brand {
   cursor: default;
+  outline: none;
 }
 
 .navbar .nav li a, .navbar .navbar-brand,.navbar .nav li a:visited, .navbar .navbar-brand:visited {
   color: #FFF;
+  outline: none;
 }
 .navbar .nav li a:hover, .navbar .navbar-brand:hover{
   color: #BBB;
+  outline: none;
 }
 
 .navbar .nav li.dropdown.open > a:focus{
@@ -76,11 +79,11 @@ p, li {
   color: #FFF;
 }
 
-#searchUser, #addUser, #removeUser {
+.searchUser, .addUser, .removeUser {
   background-color: #222;
   color: #FFF;
 }
 
-#searchUser:focus, #addUser:focus, #removeUser:focus {
+.searchUser:focus, .addUser:focus, .removeUser:focus {
   outline-color: #FFF;
 }

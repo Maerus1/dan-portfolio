@@ -1,9 +1,9 @@
 $(function(){
   var userList = $(".userList");
   var counter = 0;
-  var searchUser = $("#searchUser");
-  var addUser = $("#addUser");
-  var removeUser = $("#removeUser");
+  var searchUser = $(".searchUser");
+  var addUser = $(".addUser");
+  var removeUser = $(".removeUser");
 
   //create list of users array for future population of the webpage
   var users = ["esl_sc2", "ogamingsc2", "cretetion", "freecodecamp", "storbeck", "habathcx", "robotcaleb", "noobs2ninjas"];
