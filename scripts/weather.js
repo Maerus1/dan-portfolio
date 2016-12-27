@@ -9,6 +9,9 @@ $(function(){
   var units = ["metric", "imperial"];
   var symbols = ["&#8451;", "&#8457;"];
   var image = $("#image");
+  //find the current date
+  var date = new Date();
+
   //for switching back between metric and imperial units
   var counter = 0;
   //array for searching the various weather conditions for the image
@@ -16,10 +19,10 @@ $(function(){
                          {key:"thunder", value:"storm.gif"}, {key:"lightning", value:"storm.gif"},
                          {key:"storm", value:"storm.gif"}, {key:"fog", value:"mist.gif"},
                          {key:"mist", value:"mist.gif"}, {key:"wind", value:"wind.gif"},
-                         {key:"overcast", value:"overcast.gif"}, {key:"cloudy", value:"overcast.gif"},
+                         {key:"overcast", value:"overcast_day.gif"}, {key:"clouds", value:"overcast_day.gif"},
                          {key:"sunny", value:"sunny.gif"}, {key:"clear", value:"sunny.gif"}];
   //have a counter of sorts to keep track of the highest priority weather condition present
-  var priority = 12;
+  var priority = 11;
 
   function recall(){
     $.ajax({
@@ -47,7 +50,13 @@ $(function(){
             }
           }
         }
-        image.attr("src", "../images/" + checkConditions[priority].value);
+        if((priority == 8 || priority == 9) && date.getHours() > 6){
+          image.attr("src", "../images/overcast_night.gif");
+        }
+        else{
+          image.attr("src", "../images/" + checkConditions[priority].value);
+        }
+
       },
       error: function(a){
         console.log("Error! Couldn't properly read the JSON file");
