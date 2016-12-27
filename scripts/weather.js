@@ -50,7 +50,7 @@ $(function(){
             }
           }
         }
-        if((priority == 8 || priority == 9) && date.getHours() > 6){
+        if((priority == 8 || priority == 9) && date.getHours() > 18){
           image.attr("src", "../images/overcast_night.gif");
         }
         else{
