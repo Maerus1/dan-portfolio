@@ -70,5 +70,17 @@ p, li {
 
 .users {
   border-bottom: 1px solid #FFF;
-  border-radius: 15%;
+}
+
+.content p {
+  color: #FFF;
+}
+
+#searchUser, #addUser, #removeUser {
+  background-color: #222;
+  color: #FFF;
+}
+
+#searchUser:focus, #addUser:focus, #removeUser:focus {
+  outline-color: #FFF;
 }
