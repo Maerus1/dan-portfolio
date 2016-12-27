@@ -46,8 +46,6 @@ var search = $(".search");
       }
       //and join them together again
       searchTerm = searchTerm.join("+");
-
-      console.log(searchTerm);
       recall(searchTerm);
       search.val("");
     }
