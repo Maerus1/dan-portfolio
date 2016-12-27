@@ -6,7 +6,13 @@ $(function(){
   var removeUser = $(".removeUser");
 
   //create list of users array for future population of the webpage
-  var users = ["esl_sc2", "ogamingsc2", "cretetion", "freecodecamp", "storbeck", "habathcx", "robotcaleb", "noobs2ninjas"];
+  var users;
+  if(localStorage.getItem("userData") === null){
+      users = ["esl_sc2", "ogamingsc2", "cretetion", "freecodecamp", "storbeck", "habathcx", "robotcaleb", "noobs2ninjas"];
+  }
+  else{
+    users = JSON.parse(localStorage.getItem("userData"));
+  }
 
   function recall(){
     //inital setup of the main container
@@ -14,13 +20,15 @@ $(function(){
       "<div class=\"row text-center\">"
     );
     counter = 0;
+    //add saving functionality
+    localStorage.setItem("userData", JSON.stringify(users));
+    console.log(users);
     for(var i in users){
       (function(i){
         $.getJSON("https://wind-bow.gomix.me/twitch-api/users/" + users[i], function(obj){
           if(obj.name == undefined){
             return;
           }
-          console.log(counter);
           counter++;
           if(obj.logo !== null){
             userList.append(
@@ -67,26 +75,28 @@ $(function(){
   //add a user
   $(addUser).keypress(function(){
     if(event.which === 13){
-      users.push(addUser.val().toLowerCase());
-      console.log(users);
+      if(!(users.includes(addUser.val().toLowerCase()))){
+        users.push(addUser.val().toLowerCase());
+        //make a call to the twitch api
+        recall();
+      }
       addUser.val("");
-      //make a call to the twitch api
-      recall();
     }
   });
 
   //remove a user
   $(removeUser).keypress(function(){
     if(event.which === 13){
-      for(var i = 0; i < users.length; i++){
-        if(users[i] == (removeUser.val()).toLowerCase()){
-          users.splice(i, 1);
+      if(users.includes(removeUser.val().toLowerCase())){
+        for(var i = 0; i < users.length; i++){
+          if(users[i] == (removeUser.val()).toLowerCase()){
+            users.splice(i, 1);
+          }
         }
+        //make a call to the twitch api
+        recall();
       }
-      console.log(users);
       removeUser.val("");
-      //make a call to the twitch api
-      recall();
     }
   });
   //initial call to the twitch API
