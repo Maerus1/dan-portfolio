@@ -61,3 +61,14 @@ p, li {
 .navbar .nav .dropdown li a:hover  {
   background-color: #666;
 }
+
+/*CONTENT CONTAINER*/
+.content {
+  background-color: rgba(40, 40, 40, 0.7);
+  border-color: #222;
+}
+
+.users {
+  border-bottom: 1px solid #FFF;
+  border-radius: 15%;
+}
