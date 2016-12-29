@@ -75,12 +75,16 @@ p, li, article {
 
 /*CONTENT CONTAINER*/
 .content {
+  padding-top: 10px;
   background-color: #16213E;
-  border-color: #444D65;
+  border: 1px solid #444D65;
+  border-radius: 10px;
 }
 
 .userList {
   background-color: #16213E;
+  border-radius: 10px;
+  border: 1px solid #444D65;
 }
 .content p {
   color: #FFF;

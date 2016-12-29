@@ -74,8 +74,10 @@ ul {
 
 /*CONTENT STYLES*/
 .article {
+  padding-top: 10px;
   background-color: #16213E;
-  border-color: #444D65;
+  border: 1px solid #444D65;
+  border-radius: 10px;
 }
 
 .article p {

@@ -78,3 +78,15 @@ p, li, article {
 ul {
   list-style-type: none;
 }
+
+.todo, .done {
+  background-color: #16213E;
+  border-radius: 10px;
+  border: 1px dashed #444D65;
+}
+
+#tasks {
+  background-color: #16213E;
+  border-radius: 10px;
+  border: 1px solid #444D65;
+}

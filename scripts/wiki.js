@@ -20,7 +20,7 @@ var search = $(".search");
       else{
         content.html(
           "<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\"></div>" +
-          "<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4 well article\">" +
+          "<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4 article\">" +
           "<a href=\"" + obj.query.pages[0].canonicalurl + "\" target=\"_blank\">" +
           "<img src=\"" + obj.query.pages[0].thumbnail.source + "\" class=\"img-responsive center-block\" width=\"200\">" +
           "<p>" + obj.query.pages[0].title + "</p>" +

@@ -2,8 +2,9 @@ $(function(){
   var name = $("#name");
   var level = $("#level");
   var image = $("#image");
-
-  $.getJSON("https://www.wanikani.com/api/user/70ae2325dad1f0eb84324d57ace46c7a/recent-unlocks/5?callback=?", function(obj){
+  var tasks = $("#tasks");
+  var utcSeconds = 0;
+  $.getJSON("https://www.wanikani.com/api/user/70ae2325dad1f0eb84324d57ace46c7a/study-queue?callback=?", function(obj){
     console.log(obj);
 
     //if the user exists, then retreive the info
@@ -14,6 +15,16 @@ $(function(){
       });
       name.html(obj.user_information.username);
       level.append(obj.user_information.level);
+
+      //find the next review date
+      var d = new Date(0);
+      d.setUTCSeconds(obj.requested_information.next_review_date);
+      //add the wanikani default task
+      //ALSO ADD IF STATEMENT HERE TO MAKE SURE ONLY DAILY TASKS ARE ADDED
+      tasks.append(
+        "<p>Wanikani Review</p>" +
+        "<p>Time: " + d.toLocaleTimeString() + "</p>"
+      );
     }
     //if not, use placeholder values
     else{
