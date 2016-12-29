@@ -99,3 +99,7 @@ p, li, article {
 .searchUser:focus, .addUser:focus, .removeUser:focus {
   outline-color: #444D65;
 }
+
+a:hover, a:visited, a:focus {
+  text-decoration: none;
+}

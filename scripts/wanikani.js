@@ -18,7 +18,13 @@ $(function(){
   var level = $("#level");
   var image = $("#image");
   var tasks = $("#tasks");
+  var title = $("#title");
+  var deadline = $("#deadline");
+  var addItem = $("#addItem");
   var utcSeconds = 0;
+  //for correct dropping, each div needs a unique number
+  var counter = 1;
+
   $.getJSON("https://www.wanikani.com/api/user/70ae2325dad1f0eb84324d57ace46c7a/study-queue?callback=?", function(obj){
     console.log(obj);
 
@@ -37,7 +43,7 @@ $(function(){
       //add the wanikani default task
       //ALSO ADD IF STATEMENT HERE TO MAKE SURE ONLY DAILY TASKS ARE ADDED
       tasks.append(
-        "<div draggable=\"true\" id=\"drag\" ondragstart=\"drag(event)\">" +
+        "<div draggable=\"true\" id=\"drag" + counter++ + "\" ondragstart=\"drag(event)\" style=\"background-color: #16213E;border-radius: 10px;border: 1px solid #444D65;\">" +
         "<p>Wanikani Review</p>" +
         "<p>Time: " + d.toLocaleTimeString() + "</p>" +
         "</div>"
@@ -50,5 +56,19 @@ $(function(){
 
   }).fail(function(obj){
     console.log("You have encountered an invalid host");
+  });
+  //add a button press event here!
+  addItem.click(function(){
+    if(title.val() !== "" && deadline.val() !== ""){
+      console.log(counter);
+      tasks.append(
+        "<div draggable=\"true\" id=\"drag" + counter++ + "\" ondragstart=\"drag(event)\" style=\"background-color: #16213E;border-radius: 10px;border: 1px solid #444D65;\">" +
+        "<p>" + title.val() + "</p>" +
+        "<p>Time: " + deadline.val() + "</p>" +
+        "</div>"
+      );
+      title.val("");
+      deadline.val("");
+    }
   });
 });

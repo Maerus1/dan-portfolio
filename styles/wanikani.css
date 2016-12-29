@@ -86,12 +86,6 @@ ul {
   margin: 5px;
 }
 
-#drag {
-  background-color: #16213E;
-  border-radius: 10px;
-  border: 1px solid #444D65;
-}
-
 #tasks, #finished {
   padding-bottom: 50px;
 }

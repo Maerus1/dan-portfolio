@@ -32,7 +32,7 @@ $(function(){
           counter++;
           if(obj.logo !== null){
             userList.append(
-              "<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4\">" +
+              "<div class=\"col-lg-4 col-md-4 col-sm-4 col-xs-4 streamer\">" +
               "<a href=\"https://www.twitch.tv/" + obj.name + "\" target=\"_blank\">" +
               "<img class=\"img-responsive img-circle center-block\" src=\"" + obj.logo + "\" alt=\"User's logo\">" +
               "<p>" + obj.name + "</p></a>" +
