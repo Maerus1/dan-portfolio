@@ -1,3 +1,18 @@
+//functionality for dragging and dropping elements
+function drag(ev){
+  ev.dataTransfer.setData("text", ev.target.id);
+}
+
+function droppable(ev){
+  ev.preventDefault();
+}
+
+function drop(ev){
+  ev.preventDefault();
+  var data = ev.dataTransfer.getData("text");
+  ev.target.appendChild(document.getElementById(data));
+}
+
 $(function(){
   var name = $("#name");
   var level = $("#level");
@@ -22,8 +37,10 @@ $(function(){
       //add the wanikani default task
       //ALSO ADD IF STATEMENT HERE TO MAKE SURE ONLY DAILY TASKS ARE ADDED
       tasks.append(
+        "<div draggable=\"true\" id=\"drag\" ondragstart=\"drag(event)\">" +
         "<p>Wanikani Review</p>" +
-        "<p>Time: " + d.toLocaleTimeString() + "</p>"
+        "<p>Time: " + d.toLocaleTimeString() + "</p>" +
+        "</div>"
       );
     }
     //if not, use placeholder values
