@@ -4,36 +4,44 @@
     display: none;
   }
 }
-
 body {
-    background-color: #000;
+  background-color: #212C48;
 }
 
-p, h1 {
-    color: #000;
+p, h1, h2, h3, h4, h5, article, li {
+  color: #444D65;
 }
-h1 {
+h1, h2, h3, h4, h5 {
   font-family: 'Abril Fatface', cursive;
 }
 
-p, li {
+p, li, article {
   font-family: 'Open Sans', sans-serif;
 }
-
 
 .button:focus, .button:active {
   outline: none !important;
 }
 
-.button {
+.button, .button:focus {
   font-family: 'Ubuntu', sans-serif;
+  background-color: #444D65;
+  color: #000;
+}
+
+.button:hover {
+  color: #0A142E;
 }
 
 /*NAVBAR STYLES*/
 .container-fluid, .navbar {
-  background-color: rgb(80, 80, 80);
+  background-color: #0A142E;
+  border-color: #444D65;
 }
 
+.container-fluid {
+  margin-bottom: 0;
+}
 .navbar {
   border-top: none;
   border-left: none;
@@ -50,40 +58,40 @@ p, li {
   color: #FFF;
   outline: none;
 }
-.navbar .nav li a:hover, .navbar .navbar-brand:hover{
-  color: #BBB;
+.navbar .nav li a:hover, .navbar .navbar-brand:hover, .navbar .nav li a::after, .navbar .nav li a:active{
+  color: #CCC;
   outline: none;
 }
 
 .navbar .nav li.dropdown.open > a:focus{
-  background-color: #999;
+  background-color: #364364;
 }
 .navbar .nav .dropdown ul{
-  background-color: #000;
+  background-color: #031444;
 }
-.navbar .nav .dropdown li a:hover  {
-  background-color: #666;
+.navbar .nav .dropdown li a:hover {
+  background-color: #061F5F;
 }
 
 /*CONTENT CONTAINER*/
 .content {
-  background-color: rgba(40, 40, 40, 0.7);
-  border-color: #222;
+  background-color: #16213E;
+  border-color: #444D65;
 }
 
-.users {
-  border-bottom: 1px solid #FFF;
+.userList {
+  background-color: #16213E;
 }
-
 .content p {
   color: #FFF;
 }
 
 .searchUser, .addUser, .removeUser {
-  background-color: #222;
+  background-color: #16213E;
   color: #FFF;
+  border-color: #444D65;
 }
 
 .searchUser:focus, .addUser:focus, .removeUser:focus {
-  outline-color: #FFF;
+  outline-color: #444D65;
 }
