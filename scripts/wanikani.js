@@ -45,7 +45,7 @@ $(function(){
       tasks.append(
         "<div draggable=\"true\" id=\"drag" + counter++ + "\" ondragstart=\"drag(event)\" style=\"background-color: #16213E;border-radius: 10px;border: 1px solid #444D65;\">" +
         "<p>Wanikani Review</p>" +
-        "<p>Time: " + d.toLocaleTimeString() + "</p>" +
+        "<p>Target Time: " + d.toLocaleTimeString() + "</p>" +
         "</div>"
       );
     }
@@ -64,7 +64,7 @@ $(function(){
       tasks.append(
         "<div draggable=\"true\" id=\"drag" + counter++ + "\" ondragstart=\"drag(event)\" style=\"background-color: #16213E;border-radius: 10px;border: 1px solid #444D65;\">" +
         "<p>" + title.val() + "</p>" +
-        "<p>Time: " + deadline.val() + "</p>" +
+        "<p>Target Time: " + deadline.val() + "</p>" +
         "</div>"
       );
       title.val("");
