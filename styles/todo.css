@@ -96,3 +96,7 @@ ul {
 #tasks, #finished {
   padding-bottom: 50px;
 }
+
+#level, #name, #icon {
+  display: none;
+}
