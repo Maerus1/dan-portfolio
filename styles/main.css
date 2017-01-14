@@ -80,3 +80,8 @@ p, li, article {
 ul {
   list-style-type: none;
 }
+
+/*thumbnail styles*/
+.thumbnail {
+  background-color: #212C48;
+}
