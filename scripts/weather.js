@@ -18,11 +18,12 @@ $(function(){
   var checkConditions = [{key:"rain", value:"rain.gif"}, {key:"snow", value:"snow.gif"},
                          {key:"thunder", value:"storm.gif"}, {key:"lightning", value:"storm.gif"},
                          {key:"storm", value:"storm.gif"}, {key:"fog", value:"mist.gif"},
-                         {key:"mist", value:"mist.gif"}, {key:"wind", value:"wind.gif"},
-                         {key:"overcast", value:"overcast_day.gif"}, {key:"clouds", value:"overcast_day.gif"},
-                         {key:"sunny", value:"sunny.gif"}, {key:"clear", value:"sunny.gif"}];
+                         {key:"mist", value:"mist.gif"},{key:"drizzle", value:"rain.gif"},
+                         {key:"wind", value:"wind.gif"}, {key:"overcast", value:"overcast_day.gif"},
+                         {key:"clouds", value:"overcast_day.gif"}, {key:"sunny", value:"sunny.gif"},
+                         {key:"clear", value:"sunny.gif"}];
   //have a counter of sorts to keep track of the highest priority weather condition present
-  var priority = 11;
+  var priority = 12;
 
   function recall(){
     $.ajax({
@@ -82,7 +83,7 @@ $(function(){
     }
     else{
       counter = 0;
-      switched.html("Ferinheight");
+      switched.html("Fahrenheit");
       recall();
     }
   });
