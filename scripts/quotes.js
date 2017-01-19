@@ -5,7 +5,7 @@ $(function(){
     $.ajax({
       cache: false,
       type: 'GET',
-      url: "https://api.icndb.com/jokes/random?exclude=[explicit]",
+      url: "https://api.icndb.com/jokes/random?limitTo=[nerdy]",
       //url: "http://quotes.rest/qod.json?category=inspire",
       success: function(a){
         quote.html(a.value.joke);
