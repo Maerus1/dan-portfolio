@@ -8,12 +8,11 @@ $(function(){
   //create list of users array for future population of the webpage
   var users;
   if(localStorage.getItem("userData") === null){
-      users = ["esl_sc2", "ogamingsc2", "cretetion", "freecodecamp", "storbeck", "habathcx", "robotcaleb", "noobs2ninjas"];
+      users = ["esl_sc2"];
   }
   else{
     users = JSON.parse(localStorage.getItem("userData"));
   }
-
   function recall(){
     //inital setup of the main container
     userList.html(
