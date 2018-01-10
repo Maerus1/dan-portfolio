@@ -6,3 +6,4 @@ This portfolio uses bootstrap for its mobile-first formatting and jQuery (using 
 to add functionality and retrieve information from various API's.
 
 Enjoy!
+~ This is an old project which has not been kept up for personal reasons.
